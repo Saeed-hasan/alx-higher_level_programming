@@ -2,7 +2,7 @@
 
 
 def islower(c):
-    chr:ord(c)
+    chr = ord(c)
     if chr >= 97 and chr <= 122:
         return True
     else:
