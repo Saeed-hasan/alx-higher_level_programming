@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import sys
 
 if __name__ == "__main__":
+    import sys
     add_arg(sys.argv)
 
 def add_arg(argv):
