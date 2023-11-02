@@ -3,46 +3,69 @@
 #include <stdio.h>
 #include <string.h>
 
+listint_t *create_node(int n);
+
+/**
+ * insert_node - inserts a node sorted in a linked list of ints
+ * @head: double pointer to head of LL, needed for modification in edge
+ * cases
+ * @number: data for new node
+ *
+ * Return: pointer to newly created node, NULL on failure
+ */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *temp = *head;
-	listint_t *newNode = NULL;
+	listint_t *cur_node = NULL, *new_node = NULL;
 
 	if (!head)
 		return (NULL);
+	else if (!(*head))
+	{
+		new_node = create_node(number);
+		*head = new_node;
+		return (new_node);
+	}
+	cur_node = *head;
+	while (cur_node)
+	{
+		/* need to insert at head */
+		if (cur_node->n >= number)
+		{
+			new_node = create_node(number);
+			new_node->next = cur_node;
+			*head = new_node;
+			return (new_node);
+		}
+		else if (cur_node->n <= number)
+		{
+			if (!cur_node->next || cur_node->next->n >= number)
+			{
+				new_node = create_node(number);
+				new_node->next = cur_node->next;
+				cur_node->next = new_node;
+				return (cur_node->next);
+			}
+		}
+		cur_node = cur_node->next;
+	}
+	return (NULL); /* failed */
+}
 
-	/* malloc new node */
-	newNode = malloc(sizeof(listint_t));
-	if (newNode == NULL)
+
+/**
+ * create_node - creates a new node for the LL
+ * @n: data to insert into new node
+ *
+ * Return: pointer to newly allocated node
+ */
+listint_t *create_node(int n)
+{
+	listint_t *ret = NULL;
+
+	ret = malloc(sizeof(listint_t));
+	if (!ret)
 		return (NULL);
-	newNode->n = number;
-	newNode->next = NULL;
-
-	/* if no linked list, insert node as the only member */
-	if (*head == NULL)
-	{
-		*head = newNode;
-		(*head)->next = NULL;
-		return (newNode);
-	}
-	while (temp->next != NULL)
-	{
-		if (newNode->n < temp->n)
-		{
-			newNode->next = temp;
-			*head = newNode;
-			return (newNode);
-		}
-		if (((newNode->n > temp->n) && (newNode->n < (temp->next)->n)) ||
-		    (newNode->n == temp->n))
-		{
-			newNode->next = temp->next;
-			temp->next = newNode;
-			return (newNode);
-		}
-		temp = temp->next;
-	}
-	/* if new node is greatest and never inserted, insert now */
-	temp->next = newNode;
-	return (newNode);
+	ret->next = NULL;
+	ret->n = n;
+	return (ret);
 }
