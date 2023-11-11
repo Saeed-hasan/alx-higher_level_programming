@@ -1,5 +1,3 @@
 #!/usr/bin/python3
-def simple_delete(a_dictionary, key=""):
-    if key in a_dictionary:
-        del a_dictionary[key]
-    return a_dictionary
+def mutiply_list_map(my_list=[], number=0):
+    return (list(map(lambda x: x*number, my_list)))
