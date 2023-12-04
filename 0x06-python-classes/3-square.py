@@ -1,20 +1,17 @@
 #!/usr/bin/python3
 """
-Moudle: 2-square
-Difines class square
+Moudle: 3_square
+Defination of class square
 """
-
-
 class Square:
     """
     class defintion
-
-    Args: size of the square
+    Args: the size of square
     """
     def __init__(self, size=0):
         """
-        initialize square
-        Attributes: __size of the square
+        Initialize square 
+        Attributes: __size of square
         """
         if type(size) is not int:
             raise TypeError("size must be an integer")
@@ -24,9 +21,4 @@ class Square:
             self.__size = size
 
     def area(self):
-        """
-        calc area of the square
-
-        Return: area
-        """
-        return ((self.__size)**2)
+        return ((self.size)**2)

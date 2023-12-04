@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 """
-Moudle: square
-Difines class square
+moudle: square
+Define the class square
 """
-
-
 class Square:
-    """empty class"""
+    """ empty class """
     pass

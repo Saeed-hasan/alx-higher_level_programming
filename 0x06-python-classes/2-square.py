@@ -1,21 +1,18 @@
 #!/usr/bin/python3
 """
-Moudle: 2-square
-Difines class square
+Moudle: 2_square
+Defination of class square
 """
-
-
 class Square:
     """
     class defintion
-
-    Args: size of the square
+    Args: the size of square
     """
     def __init__(self, size=0):
         """
-        initialize square
-        Attributes: __size of the square
-        """
+        Initialize square 
+        Attributes: __size of square
+        """ 
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
