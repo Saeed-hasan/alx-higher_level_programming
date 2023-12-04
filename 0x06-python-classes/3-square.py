@@ -3,6 +3,8 @@
 Moudle: 3_square
 Defination of class square
 """
+
+
 class Square:
     """
     class defintion
@@ -10,7 +12,7 @@ class Square:
     """
     def __init__(self, size=0):
         """
-        Initialize square 
+        Initialize square
         Attributes: __size of square
         """
         if type(size) is not int:

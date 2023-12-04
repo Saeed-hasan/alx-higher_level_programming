@@ -3,6 +3,8 @@
 Moudle: square
 Defines class square
 """
+
+
 class Square:
     """
     class defintion

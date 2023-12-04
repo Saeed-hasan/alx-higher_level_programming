@@ -45,7 +45,7 @@ class Square:
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")
-        elif type(value[0])is not int or value[0] < 0:
+        elif type(value[0]) is not int or value[0] < 0:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
@@ -93,7 +93,7 @@ class Square:
                 print("")
             for i in range(self.size):
                 for k in range(self.position[0]):
-                    print(end= " ")
+                    print(end=" ")
                 for j in range(self.size):
                     print("#", end="")
                 print("")

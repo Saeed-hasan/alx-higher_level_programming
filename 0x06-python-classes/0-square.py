@@ -3,6 +3,8 @@
 moudle: square
 Define the class square
 """
+
+
 class Square:
     """ empty class """
     pass
