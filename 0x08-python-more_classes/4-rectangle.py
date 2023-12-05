@@ -39,9 +39,9 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.__width):
                 string += '#'
-            if i < self.__height - 1:
                 string += '\n'
-        return string
+                string = string.rstrip()
+                return string
 
     def __repr__(self):
         """
@@ -50,8 +50,7 @@ class Rectangle:
         Returns:+
             string (str): string to get
         """
-        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) +\
-            ")"
+        return "Rectangle({}, {})".format(str(self.__width), str(self.__height))
 
     @property
     def height(self):

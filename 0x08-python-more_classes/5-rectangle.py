@@ -55,19 +55,24 @@ class Rectangle:
         """ Return perimeter """
         if self.__width == 0 or self.__height == 0:
             return 0
-        return (2 * self.__width) + (2 * self.height)
+        return 2 * (self.__width + self.height)
 
     def __str__(self):
         """ Prints rectangle  """
+        string = ""
         if self.__width == 0 or self.__height == 0:
             return ""
-        pic = "\n".join(["#" * self.__width for rows in range(self.__height)])
-        return pic
+        else:
+            for i in range(self.__height):
+            for j in range(self.__width):
+                string += '#'
+                string += '\n'
+                string = string.rstrip()
+                return string
 
     def __repr__(self):
         """ canonical str """
-        return "Rectangle(" + str(self.__width) + \
-            "," + " " + str(self.__height) + ")"
+        return "Rectangle({}, {})".format(str(self.__width), str(self.__height))
 
     def __del__(self):
         print("Bye rectangle...")
