@@ -13,5 +13,5 @@ class MyList(list):
 
     def print_sorted(self):
         """ print the the list but sorted """
-        sorted_list = sorted(self)
+        sorted_list = sorted(list)
         print(sorted_list)
