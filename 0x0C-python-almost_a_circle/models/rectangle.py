@@ -13,11 +13,21 @@ class Rectangle(Base):
     '''
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
+
+    @staticmethod
+    def setter_validation(name, value):
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if name == "x" or name == "y":
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(name))
+        elif value <= 0:
+            raise ValueError("{} must be > 0".format(name))
 
     @property
     def width(self):
@@ -78,13 +88,3 @@ class Rectangle(Base):
         '''
         self.setter_validation("y", value)
         self.__y = value
-
-    @staticmethod
-    def setter_validation(name, value):
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
-        if name == "x" or name == "y":
-            if value < 0:
-                raise ValueError("{} must be >= 0".format(name))
-        elif value <= 0:
-            raise ValueError("{} must be > 0".format(name))
