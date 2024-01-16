@@ -18,7 +18,10 @@ class Rectangle(Base):
         """
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
+        if name == "x" or name == "y":
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(name))
+        elif value <= 0:
             raise ValueError("{} must be > 0".format(name))
 
     @property
