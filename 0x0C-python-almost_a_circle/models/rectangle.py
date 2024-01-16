@@ -101,7 +101,7 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        """ string """
+        """Return class representation """
         txt = '[Rectangle] ({}) {}/{} - {}/{}'
-        txt = txt.format(self.id, self.__x, self.__y, self.__width, self.__height)
+        txt = txt.format(self.id, self.__x, self.__y, self.width, self.height)
         return txt
