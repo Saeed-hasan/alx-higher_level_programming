@@ -126,3 +126,16 @@ class Rectangle(Base):
                 elif i == 4:
                     self.__y = arg
                 i += 1
+
+        elif kwargs is not None and len(kwargs) != 0:
+            for (key, value) in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.__width = value
+                elif key == "height":
+                    self.__height = value
+                elif key == "x":
+                    self.__x = value
+                elif key == "y":
+                    self.__y = value
