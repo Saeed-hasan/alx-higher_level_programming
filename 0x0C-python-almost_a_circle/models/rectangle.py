@@ -52,13 +52,13 @@ class Rectangle(Base):
         """ setter """
         self.__y = value
 
-    def integer_validator(self, name, value):
+    def integer_validator(self, name, value, eq=True):
         """
         Validates an integer
         """
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
-        if value < 0:
+        if eq and value < 0:
             raise ValueError("{} must be >= 0".format(name))
-        elif value <= 0:
+        elif not eq and value <= 0:
             raise ValueError("{} must be > 0".format(name))
