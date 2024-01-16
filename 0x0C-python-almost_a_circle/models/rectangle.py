@@ -110,7 +110,7 @@ class Rectangle(Base):
         txt = txt.format(self.id, self.__x, self.__y, self.width, self.height)
         return txt
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ update rectangle by new value """
         if args is not None and len(args) != 0:
             i = 0
