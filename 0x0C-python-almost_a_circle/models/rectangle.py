@@ -23,8 +23,9 @@ class Rectangle(Base):
     def setter_validation(name, value):
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
-        if value < 0:
-            raise ValueError("{} must be >= 0".format(name))
+        if name == "x" or name == "y":
+            if value < 0:
+                raise ValueError("{} must be >= 0".format(name))
         elif value <= 0:
             raise ValueError("{} must be > 0".format(name))
 
