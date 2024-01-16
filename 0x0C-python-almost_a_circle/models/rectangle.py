@@ -53,6 +53,7 @@ class Rectangle(Base):
         self.__y = value
 
     def int_Validator(self, name, value):
+        """ validates an integer """
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
