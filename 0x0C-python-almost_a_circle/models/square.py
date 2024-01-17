@@ -19,9 +19,9 @@ class Square(Rectangle):
             x (int): The x-coordinate of the square's position (default 0).
             y (int): The y-coordinate of the square's position (default 0).
             id (int): The ID of an instance of this class (default None).
+        """
         super().__init__(size, size, x, y, id)
         self.size = size
-        """
 
     def __str__(self):
         """Return class representation """
