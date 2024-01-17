@@ -14,10 +14,8 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         """ main class """
-        super().__init__(x, y, id)
+        super().__init__(size, size, x, y, id)
         self.size = size
-        self.width = size
-        self.height = size
 
     def __str__(self):
         """Return class representation """
