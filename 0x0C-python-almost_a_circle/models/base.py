@@ -36,8 +36,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ json string to dic """
+        """ load json from file """
         if json_string is None or len(json_string) == 0:
-            return json_string = "[]"
-        else:
-            return json.loads(json_string)
+            json_string = "[]"
+        return json.loads(json_string)
