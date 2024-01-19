@@ -38,6 +38,6 @@ class Base:
     def from_json_string(json_string):
         """ json string to dic """
         if json_string is None or len(json_string) == 0:
-            return "[]"
+            return json_string = "[]"
         else:
             return json.loads(json_string)
