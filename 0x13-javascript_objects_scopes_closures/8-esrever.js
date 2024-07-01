@@ -1,13 +1,11 @@
 #!/usr/bin/node
 
 exports.esrever = function (list) {
-  let left, right, temp;
+  let revlist = [];
 
-  for (left = 0, right = list.length - 1; left < list.length / 2; left++, right--) {
-    temp = list[left];
-    list[left] = list[right];
-    list[right] = temp;
+  for (let i = list.length - 1; i >= 0; i--) {
+    revlist.push(list[i]);
   }
 
-  return list;
+  return revlist;
 };
